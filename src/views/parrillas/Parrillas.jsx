@@ -9,7 +9,7 @@ const Parrillas = () => {
 
   return (
     <section>
-      <h1 className="title">Pan</h1>
+      <h1 className="title">Parrillas</h1>
       {menuItems.length > 1 && <Gallery items={menuItems[0].data} />}
     </section>
   );
