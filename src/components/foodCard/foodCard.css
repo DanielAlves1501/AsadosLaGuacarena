@@ -1,0 +1,33 @@
+.gallery__image {
+  width: 100%;
+  height: 100%;
+  min-height: 150px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    min-height: 150px;
+    position: absolute;
+    background: #000;
+    opacity: 0.4;
+    transition: all 0.3s ease;
+    border-radius: 20px;
+  }
+
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+}
+
+.gallery__image:hover::before {
+  opacity: 0;
+}

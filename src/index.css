@@ -1,0 +1,86 @@
+@font-face {
+  font-family: "Open Sans Condensed";
+  src: url("./fonts/OpenSans-CondLight.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Sans Condensed";
+  src: url("./fonts/OpenSans-CondLightItalic.ttf");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Open Sans Condensed";
+  src: url("./fonts/OpenSans-CondBold.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Variables */
+
+:root {
+  --white: #f4f4f4;
+  --orange: #eb6800;
+  --red: #e10e35;
+  --yellow: #fab700;
+}
+
+/* Estilos Generales */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans Condensed";
+  width: 100%;
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--white);
+  margin: auto;
+  background: url("./assets/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+  background-attachment: fixed;
+}
+
+.container {
+  width: 95%;
+  max-width: 1100px;
+  margin: auto;
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--white);
+}
+
+.title {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 32px;
+  font-weight: 700;
+}
