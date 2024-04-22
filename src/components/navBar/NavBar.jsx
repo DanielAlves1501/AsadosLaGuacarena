@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import logo from "../../assets/logo.png";
 import "./navBar.css";
 import { Link } from "react-router-dom";
@@ -8,7 +8,7 @@ const NavBar = ({ showMobileMenu, setShowMobileMenu }) => {
     <nav
       className="navbar"
       style={{
-        transform: `${showMobileMenu ? "translateX(0)" : "translateX(-100%)"}`,
+        transform: `${showMobileMenu ? "translateX(-100%)" : "translateX(0)"}`,
       }}
     >
       <img src={logo} className="navbar__logo" alt="Logo" />
