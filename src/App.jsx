@@ -14,6 +14,7 @@ import { getMenuItem } from "./utils/getMenuItem";
 
 function App() {
   const [menuItems, setMenuItems] = useState([]);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   useEffect(() => {
     const getParrillas = getMenuItem("parrillas");
@@ -37,8 +38,15 @@ function App() {
     <>
       <GlobalProvider value={{ menuItems, setMenuItems }}>
         <header>
+          <i
+            className="fa-solid fa-bars mobile-menu"
+            onClick={() => setShowMobileMenu(!showMobileMenu)}
+          ></i>
           <div className="container">
-            <NavBar />
+            <NavBar
+              showMobileMenu={showMobileMenu}
+              setShowMobileMenu={setShowMobileMenu}
+            />
           </div>
         </header>
         <main>

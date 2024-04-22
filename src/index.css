@@ -84,3 +84,19 @@ a {
   font-size: 32px;
   font-weight: 700;
 }
+
+.mobile-menu {
+  display: none;
+  position: absolute;
+  z-index: 10000;
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 470px) {
+  .mobile-menu {
+    display: block;
+  }
+}

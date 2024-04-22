@@ -3,9 +3,14 @@ import logo from "../../assets/logo.png";
 import "./navBar.css";
 import { Link } from "react-router-dom";
 
-const NavBar = ({ setCurrentGalery }) => {
+const NavBar = ({ showMobileMenu, setShowMobileMenu }) => {
   return (
-    <nav className="navbar">
+    <nav
+      className="navbar"
+      style={{
+        transform: `${showMobileMenu ? "translateX(0)" : "translateX(-100%)"}`,
+      }}
+    >
       <img src={logo} className="navbar__logo" alt="Logo" />
 
       <ul className="navbar-list">
