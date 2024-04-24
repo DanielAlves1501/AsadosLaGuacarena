@@ -4,10 +4,17 @@ import FoodCard from "../foodCard/FoodCard";
 import { useMenuContext } from "../../context/menuContex";
 
 const Modal = () => {
-  const { selectedDish, showModal, setShowModal } = useMenuContext();
+  const { selectedDish, showModal, setShowModal, setHideMobileMenuIcon } =
+    useMenuContext();
   return (
     <section className={`modal ${showModal && "modal--show"}`}>
-      <span className="modal__delete-icon" onClick={() => setShowModal(false)}>
+      <span
+        className="modal__delete-icon"
+        onClick={() => {
+          setShowModal(false);
+          setHideMobileMenuIcon(false);
+        }}
+      >
         X
       </span>
       <div className="modal__black-opacity"></div>

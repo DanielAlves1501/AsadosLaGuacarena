@@ -20,7 +20,7 @@
 }
 
 .modal__delete-icon {
-  z-index: 12;
+  z-index: 15;
   color: var(--orange);
   font-size: 32px;
   font-weight: 700;
@@ -33,7 +33,7 @@
 .modal-info-container {
   position: relative;
   z-index: 12;
-  width: 50%;
+  width: 100%;
   max-width: 500px;
   height: 100vh;
   max-height: 700px;

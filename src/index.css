@@ -101,6 +101,14 @@ a {
   cursor: pointer;
 }
 
+.mobile-menu--hide {
+  display: none;
+}
+
+.mobile-menu--show {
+  display: block;
+}
+
 @media screen and (max-width: 470px) {
   .mobile-menu {
     display: block;

@@ -1,8 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import NavBar from "./components/navBar/NavBar";
 import "./index.css";
-import Galeria from "./views/parrillas/Parrillas";
 import Parrillas from "./views/parrillas/Parrillas";
 import Pollos from "./views/pollos/Pollos";
 import PlatosChef from "./views/platosChef/PlatosChef";
@@ -18,6 +17,8 @@ function App() {
   const [showModal, setShowModal] = useState(false);
   const [selectedDish, setSelectedDish] = useState([]);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+
+  const [hideMobileMenuIcon, setHideMobileMenuIcon] = useState(false);
 
   useEffect(() => {
     const getParrillas = getMenuItem("parrillas");
@@ -47,14 +48,20 @@ function App() {
           setSelectedDish,
           showModal,
           setShowModal,
+          hideMobileMenuIcon,
+          setHideMobileMenuIcon,
         }}
       >
         <Modal />
         <header>
-          <i
-            className="fa-solid fa-bars mobile-menu"
-            onClick={() => setShowMobileMenu(!showMobileMenu)}
-          ></i>
+          {!hideMobileMenuIcon && (
+            <i
+              className={`fa-solid fa-bars mobile-menu
+            }`}
+              onClick={() => setShowMobileMenu(!showMobileMenu)}
+            ></i>
+          )}
+
           <div className="container">
             <NavBar
               showMobileMenu={showMobileMenu}

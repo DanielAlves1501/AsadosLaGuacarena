@@ -5,8 +5,13 @@ import { useMenuContext } from "../../context/menuContex";
 
 const FoodCard = ({ item }) => {
   const [loader, setLoader] = useState(true);
-  const { selectedDish, setSelectedDish, setShowModal, showModal } =
-    useMenuContext();
+  const {
+    selectedDish,
+    setSelectedDish,
+    setShowModal,
+    showModal,
+    setHideMobileMenuIcon,
+  } = useMenuContext();
 
   return (
     <div className="gallery__image">
@@ -28,6 +33,7 @@ const FoodCard = ({ item }) => {
         onClick={() => {
           setShowModal(true);
           setSelectedDish(item);
+          setHideMobileMenuIcon(true);
         }}
       />
     </div>
