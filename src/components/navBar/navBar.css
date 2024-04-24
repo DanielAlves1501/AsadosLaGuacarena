@@ -32,6 +32,16 @@
   }
 }
 
+/* Modifiers */
+
+.navbar--show {
+  transform: translateX(0%);
+}
+
+.navbar--hide {
+  transform: translateX(-100%);
+}
+
 @media screen and (max-width: 550px) {
   .navbar__logo {
     display: none;

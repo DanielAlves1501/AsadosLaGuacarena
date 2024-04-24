@@ -11,9 +11,12 @@ import Postres from "./views/postres/Postres";
 import Bebidas from "./views/bebidas/Bebidas";
 import GlobalProvider from "./context/menuContex";
 import { getMenuItem } from "./utils/getMenuItem";
+import Modal from "./components/modal/Modal";
 
 function App() {
   const [menuItems, setMenuItems] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+  const [selectedDish, setSelectedDish] = useState([]);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   useEffect(() => {
@@ -36,7 +39,17 @@ function App() {
 
   return (
     <>
-      <GlobalProvider value={{ menuItems, setMenuItems }}>
+      <GlobalProvider
+        value={{
+          menuItems,
+          setMenuItems,
+          selectedDish,
+          setSelectedDish,
+          showModal,
+          setShowModal,
+        }}
+      >
+        <Modal />
         <header>
           <i
             className="fa-solid fa-bars mobile-menu"

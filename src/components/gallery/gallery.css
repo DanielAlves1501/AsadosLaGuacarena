@@ -9,3 +9,12 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+@media screen and (max-width: 450px) {
+  .container {
+    width: 85%;
+  }
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}

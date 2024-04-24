@@ -1,0 +1,47 @@
+.modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  transition: all 1s ease;
+  transform: scale(0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__black-opacity {
+  background: #000;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  opacity: 0.7;
+}
+
+.modal__delete-icon {
+  z-index: 12;
+  color: var(--orange);
+  font-size: 32px;
+  font-weight: 700;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.modal-info-container {
+  position: relative;
+  z-index: 12;
+  width: 50%;
+  max-width: 500px;
+  height: 100vh;
+  max-height: 700px;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal--show {
+  transform: scale(1);
+}

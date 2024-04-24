@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import "./foodCard.css";
 import { ColorRing } from "react-loader-spinner";
+import { useMenuContext } from "../../context/menuContex";
 
 const FoodCard = ({ item }) => {
   const [loader, setLoader] = useState(true);
+  const { selectedDish, setSelectedDish, setShowModal, showModal } =
+    useMenuContext();
 
   return (
     <div className="gallery__image">
+      <h2 className="gallery-image__title">{item.name}</h2>
       {loader && (
         <ColorRing
           visible={true}
@@ -21,6 +25,10 @@ const FoodCard = ({ item }) => {
         src={item.imagePath}
         alt={item.name}
         onLoad={() => setLoader(false)}
+        onClick={() => {
+          setShowModal(true);
+          setSelectedDish(item);
+        }}
       />
     </div>
   );

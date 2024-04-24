@@ -18,6 +18,12 @@
   font-weight: 700;
   font-style: normal;
 }
+@font-face {
+  font-family: "Open Sans Condensed";
+  src: url("./fonts/OpenSans_Condensed-SemiBold");
+  font-weight: 600;
+  font-style: normal;
+}
 
 /* Variables */
 

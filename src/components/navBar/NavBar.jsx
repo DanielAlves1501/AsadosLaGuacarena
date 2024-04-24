@@ -4,19 +4,14 @@ import "./navBar.css";
 import { Link } from "react-router-dom";
 
 const NavBar = ({ showMobileMenu, setShowMobileMenu }) => {
-  window.addEventListener("resize", () => {
+  useEffect(() => {
     if (window.innerWidth > 470) {
       setShowMobileMenu(true);
-    } else {
-      setShowMobileMenu(false);
     }
   });
   return (
     <nav
-      className="navbar"
-      style={{
-        transform: `${showMobileMenu ? "translateX(0)" : "translateX(-100%)"}`,
-      }}
+      className={`navbar ${showMobileMenu ? "navbar--show" : "navbar--hide"}`}
     >
       <img src={logo} className="navbar__logo" alt="Logo" />
 
