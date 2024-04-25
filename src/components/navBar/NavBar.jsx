@@ -34,6 +34,20 @@ const NavBar = ({ showMobileMenu, setShowMobileMenu }) => {
           onClick={() => setShowMobileMenu(false)}
         >
           {" "}
+          <Link to="/pizzas">Pizzas</Link>
+        </li>
+        <li
+          className="navbar-list__item"
+          onClick={() => setShowMobileMenu(false)}
+        >
+          {" "}
+          <Link to="/hamburguesas">Hamburguesas</Link>
+        </li>
+        <li
+          className="navbar-list__item"
+          onClick={() => setShowMobileMenu(false)}
+        >
+          {" "}
           <Link to="/platosChef">Platos Chef</Link>
         </li>
         <li

@@ -11,6 +11,8 @@ import Bebidas from "./views/bebidas/Bebidas";
 import GlobalProvider from "./context/menuContex";
 import { getMenuItem } from "./utils/getMenuItem";
 import Modal from "./components/modal/Modal";
+import Hamburguesas from "./views/hamburguesas/Hamburguesas";
+import Pizzas from "./views/pizzas/Pizzas";
 
 function App() {
   const [menuItems, setMenuItems] = useState([]);
@@ -50,6 +52,8 @@ function App() {
           setShowModal,
           hideMobileMenuIcon,
           setHideMobileMenuIcon,
+          showMobileMenu,
+          setShowMobileMenu,
         }}
       >
         <Modal />
@@ -78,6 +82,8 @@ function App() {
               <Route path="/combos" element={<Combos />} />
               <Route path="/postres" element={<Postres />} />
               <Route path="/bebidas" element={<Bebidas />} />
+              <Route path="/hamburguesas" element={<Hamburguesas />} />
+              <Route path="/pizzas" element={<Pizzas />} />
             </Routes>
           </div>
         </main>

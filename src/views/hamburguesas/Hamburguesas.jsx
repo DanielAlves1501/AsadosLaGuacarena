@@ -1,16 +1,16 @@
 import React from "react";
-import "./platosChef.css";
+import "./hamburguesas.css";
 import { useMenuContext } from "../../context/menuContex";
 import Gallery from "../../components/gallery/Gallery";
-const PlatosChef = () => {
+const Hamburguesas = () => {
   const { menuItems } = useMenuContext();
 
   return (
     <section>
-      <h1 className="title">Platos Chef</h1>
-      {menuItems.length > 1 && <Gallery items={menuItems[3].data} />}
+      <h1 className="title">Hamburguesas</h1>
+      {menuItems.length > 1 && <Gallery items={menuItems[4].data} />}
     </section>
   );
 };
 
-export default PlatosChef;
+export default Hamburguesas;
