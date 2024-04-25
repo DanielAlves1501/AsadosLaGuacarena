@@ -58,6 +58,10 @@ body {
   background-attachment: fixed;
 }
 
+main {
+  padding-bottom: 40px;
+}
+
 .container {
   width: 95%;
   max-width: 1100px;
