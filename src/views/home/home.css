@@ -142,12 +142,6 @@
   }
 }
 
-@media screen and (max-width: 460px) {
-  .dishes-images-container {
-    grid-template-columns: 1fr;
-  }
-}
-
 @media screen and (max-width: 400px) {
   .title--home {
     font-size: 62px;

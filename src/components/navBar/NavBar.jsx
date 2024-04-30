@@ -13,8 +13,19 @@ const NavBar = ({
   useEffect(() => {
     if (window.innerWidth > 470) {
       setShowMobileMenu(true);
+    } else {
+      setShowMobileMenu(false);
     }
   });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 470) {
+      setShowMobileMenu(true);
+    } else {
+      setShowMobileMenu(false);
+    }
+  });
+
   return (
     <nav
       className={`navbar ${showMobileMenu ? "navbar--show" : "navbar--hide"}`}
