@@ -30,7 +30,7 @@
 :root {
   --white: #f4f4f4;
   --orange: #eb6800;
-  --red: #e10e35;
+  --red: #c91e24;
   --yellow: #fab700;
 }
 
@@ -51,15 +51,6 @@ body {
   font-size: 16px;
   color: var(--white);
   margin: auto;
-  background: url("./assets/background.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: right;
-  background-attachment: fixed;
-}
-
-main {
-  padding-bottom: 40px;
 }
 
 .container {
@@ -88,11 +79,31 @@ a {
   color: var(--white);
 }
 
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .title {
   text-align: center;
   margin: 20px 0;
   font-size: 32px;
   font-weight: 700;
+}
+
+.subtitle {
+  text-align: center;
+  color: #000;
+  margin-bottom: 20px;
+  font-size: 36px;
+}
+
+.description {
+  color: #000;
+  text-align: justify;
+  font-family: "Open Sans";
+  font-weight: 400;
 }
 
 .mobile-menu {

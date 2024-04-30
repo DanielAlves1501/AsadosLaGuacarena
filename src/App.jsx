@@ -13,6 +13,8 @@ import { getMenuItem } from "./utils/getMenuItem";
 import Modal from "./components/modal/Modal";
 import Hamburguesas from "./views/hamburguesas/Hamburguesas";
 import Pizzas from "./views/pizzas/Pizzas";
+import Home from "./views/home/Home";
+import Menu from "./views/menu/Menu";
 
 function App() {
   const [menuItems, setMenuItems] = useState([]);
@@ -21,6 +23,8 @@ function App() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   const [hideMobileMenuIcon, setHideMobileMenuIcon] = useState(false);
+
+  const [mainDishes, setMainDishes] = useState([]);
 
   useEffect(() => {
     const getParrillas = getMenuItem("parrillas");
@@ -37,7 +41,36 @@ function App() {
       getEnsaladas,
       getHamburguesas,
       getPostres,
-    ]).then((data) => setMenuItems(data));
+    ]).then((data) => {
+      setMenuItems(data);
+
+      let mainDishes = [
+        {
+          name: "Parrillas",
+          imagePath: data[0].data[2].imagePath,
+          path: "/menu/parrillas",
+        },
+        {
+          name: "Pizzas",
+          imagePath: data[2].data[2].imagePath,
+          path: "/menu/pizzas",
+        },
+        {
+          name: "Espetadas",
+          imagePath: data[0].data[0].imagePath,
+          path: "/menu/parrillas",
+        },
+        {
+          name: "Pollo",
+          imagePath: data[1].data[1].imagePath,
+          path: "/menu/pollos",
+        },
+      ];
+
+      setMainDishes(mainDishes);
+    });
+
+    console.log(mainDishes);
   }, []);
 
   return (
@@ -57,37 +90,20 @@ function App() {
         }}
       >
         <Modal />
-        <header>
-          {!hideMobileMenuIcon && (
-            <i
-              className={`fa-solid fa-bars mobile-menu
-            }`}
-              onClick={() => setShowMobileMenu(!showMobileMenu)}
-            ></i>
-          )}
 
-          <div className="container">
-            <NavBar
-              showMobileMenu={showMobileMenu}
-              setShowMobileMenu={setShowMobileMenu}
-            />
-          </div>
-        </header>
-        <main>
-          <div className="container">
-            <Routes>
-              <Route path="/" element={<Parrillas />} />
-              <Route path="/pollos" element={<Pollos />} />
-              <Route path="/platosChef" element={<PlatosChef />} />
-              <Route path="/combos" element={<Combos />} />
-              <Route path="/postres" element={<Postres />} />
-              <Route path="/bebidas" element={<Bebidas />} />
-              <Route path="/hamburguesas" element={<Hamburguesas />} />
-              <Route path="/pizzas" element={<Pizzas />} />
-            </Routes>
-          </div>
-        </main>
-        <footer></footer>
+        <Routes>
+          <Route path="/" element={<Home mainDishes={mainDishes} />} />
+          <Route path="/menu/*" element={<Menu />}>
+            <Route path="parrillas" element={<Parrillas />} />
+            <Route path="pollos" element={<Pollos />} />
+            <Route path="platosChef" element={<PlatosChef />} />
+            <Route path="combos" element={<Combos />} />
+            <Route path="postres" element={<Postres />} />
+            <Route path="bebidas" element={<Bebidas />} />
+            <Route path="hamburguesas" element={<Hamburguesas />} />
+            <Route path="pizzas" element={<Pizzas />} />
+          </Route>
+        </Routes>
       </GlobalProvider>
     </>
   );

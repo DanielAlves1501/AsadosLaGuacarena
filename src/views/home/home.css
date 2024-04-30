@@ -1,0 +1,159 @@
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-40px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.home-header {
+  width: 100%;
+  height: 100vh;
+  background: url("../../assets/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+  position: relative;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  margin-top: -15%;
+}
+
+.title--home {
+  text-align: left;
+  font-size: 96px;
+  margin: 0;
+}
+
+.hero-btn-container {
+  width: 204px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__btn {
+  padding: 15px 80px;
+  font-family: "Open Sans Condensed";
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--white);
+  background: none;
+  outline: none;
+  border: 2px solid var(--white);
+  cursor: pointer;
+}
+
+.home-header__goDown {
+  border: none;
+  outline: none;
+  background: none;
+  color: var(--red);
+  font-size: 64px;
+  position: absolute;
+  bottom: 10px;
+  left: calc(50% - 25px);
+  cursor: pointer;
+  animation: bounce 1.5s linear infinite;
+}
+
+/* Main Dishes Section */
+
+.mainDishes {
+  padding: 40px 0;
+  background: url("../../assets/images/wood-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.subtitle--white {
+  color: var(--white);
+  font-size: 82px;
+}
+
+.dishes-images-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.mainDish {
+  width: 100%;
+  vertical-align: top;
+}
+
+.mainDish__name {
+  text-align: center;
+  margin-bottom: 10px;
+  background: var(--red);
+  padding: 10px;
+  font-size: 22px;
+}
+
+@media screen and (max-width: 850px) {
+  .dishes-images-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .subtitle--white {
+    font-size: 64px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .title--home {
+    font-size: 82px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .title--home {
+    text-align: center;
+    font-size: 82px;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .title--home {
+    font-size: 72px;
+  }
+
+  .subtitle--white {
+    font-size: 52px;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .dishes-images-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .title--home {
+    font-size: 62px;
+  }
+
+  .subtitle--white {
+    font-size: 42px;
+  }
+}

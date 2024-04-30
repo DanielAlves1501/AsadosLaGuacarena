@@ -2,8 +2,14 @@ import React, { useEffect } from "react";
 import logo from "../../assets/logo.png";
 import "./navBar.css";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
-const NavBar = ({ showMobileMenu, setShowMobileMenu }) => {
+const NavBar = ({
+  showMobileMenu,
+  setShowMobileMenu,
+  listItems,
+  handleOnclick,
+}) => {
   useEffect(() => {
     if (window.innerWidth > 470) {
       setShowMobileMenu(true);
@@ -13,64 +19,26 @@ const NavBar = ({ showMobileMenu, setShowMobileMenu }) => {
     <nav
       className={`navbar ${showMobileMenu ? "navbar--show" : "navbar--hide"}`}
     >
-      <img src={logo} className="navbar__logo" alt="Logo" />
+      <Link to="/">
+        <img src={logo} className="navbar__logo" alt="Logo" />
+      </Link>
 
       <ul className="navbar-list">
-        <li
-          className="navbar-list__item"
-          onClick={() => setShowMobileMenu(false)}
-        >
-          <Link to="/">Parrillas</Link>
-        </li>
-        <li
-          className="navbar-list__item"
-          onClick={() => setShowMobileMenu(false)}
-        >
-          {" "}
-          <Link to="/pollos">Pollos</Link>
-        </li>
-        <li
-          className="navbar-list__item"
-          onClick={() => setShowMobileMenu(false)}
-        >
-          {" "}
-          <Link to="/pizzas">Pizzas</Link>
-        </li>
-        <li
-          className="navbar-list__item"
-          onClick={() => setShowMobileMenu(false)}
-        >
-          {" "}
-          <Link to="/hamburguesas">Hamburguesas</Link>
-        </li>
-        <li
-          className="navbar-list__item"
-          onClick={() => setShowMobileMenu(false)}
-        >
-          {" "}
-          <Link to="/platosChef">Platos Chef</Link>
-        </li>
-        <li
-          className="navbar-list__item"
-          onClick={() => setShowMobileMenu(false)}
-        >
-          {" "}
-          <Link to="/combos">Combos</Link>
-        </li>
-        <li
-          className="navbar-list__item"
-          onClick={() => setShowMobileMenu(false)}
-        >
-          {" "}
-          <Link to="/postres">Postres</Link>
-        </li>
-        <li
-          className="navbar-list__item"
-          onClick={() => setShowMobileMenu(false)}
-        >
-          {" "}
-          <Link to="/bebidas">Bebidas</Link>
-        </li>
+        {listItems.map((item, index) => (
+          <motion.li
+            initial={{ y: -100 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 1, delay: index * 0.25 }}
+            className="navbar-list__item"
+            onClick={handleOnclick}
+          >
+            {item.link === true ? (
+              <Link to={item.path}>{item.name}</Link>
+            ) : (
+              <a href="#">{item.name}</a>
+            )}
+          </motion.li>
+        ))}
       </ul>
     </nav>
   );
