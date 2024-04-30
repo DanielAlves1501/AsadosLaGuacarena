@@ -16,7 +16,7 @@ const NavBar = ({
     } else {
       setShowMobileMenu(false);
     }
-  });
+  }, []);
 
   window.addEventListener("resize", () => {
     if (window.innerWidth > 470) {
