@@ -3,6 +3,7 @@ import "./menu.css";
 import { useMenuContext } from "../../context/menuContex";
 import NavBar from "../../components/navBar/NavBar";
 import { Navigate, Outlet } from "react-router-dom";
+import Parrillas from "../parrillas/Parrillas";
 
 const Menu = () => {
   const { hideMobileMenuIcon, showMobileMenu, setShowMobileMenu } =
@@ -36,7 +37,11 @@ const Menu = () => {
             showMobileMenu={showMobileMenu}
             setShowMobileMenu={setShowMobileMenu}
             listItems={menuNavbarItems}
-            handleOnclick={() => setShowMobileMenu(false)}
+            handleOnclick={() => {
+              if (window.innerWidth <= 470) {
+                setShowMobileMenu(false);
+              }
+            }}
           />
         </div>
       </header>

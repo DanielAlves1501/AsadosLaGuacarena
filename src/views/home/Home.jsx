@@ -9,11 +9,23 @@ const Home = ({ mainDishes }) => {
   const { showMobileMenu, setShowMobileMenu, hideMobileMenuIcon } =
     useMenuContext();
   const mainDishesRef = useRef();
+  const locationRef = useRef();
 
   const homeNavbarItems = [
-    { name: "Menu", path: "/menu", link: true },
-    { name: "Platos Destacados", path: "/CHANGETHIS", link: false },
-    { name: "Ubicacion", path: "/CHANGETHIS", link: false },
+    { name: "Menu", path: "/menu/parrillas", link: true },
+    {
+      name: "Platos Destacados",
+      path: "",
+      link: false,
+      onClick: () =>
+        mainDishesRef.current.scrollIntoView({ behavior: "smooth" }),
+    },
+    {
+      name: "Ubicacion",
+      path: "",
+      link: false,
+      onClick: () => locationRef.current.scrollIntoView({ behavior: "smooth" }),
+    },
   ];
 
   return (
@@ -41,7 +53,7 @@ const Home = ({ mainDishes }) => {
           >
             <h1 className="title title--home">LA GUACAREÑA</h1>
             <div className="hero-btn-container">
-              <Link to="/menu" className="hero__btn">
+              <Link to="/menu/parrillas" className="hero__btn">
                 Menu
               </Link>
             </div>
@@ -60,7 +72,11 @@ const Home = ({ mainDishes }) => {
       </header>
 
       <main>
-        <section className="mainDishes" ref={mainDishesRef}>
+        <section
+          className="mainDishes"
+          id="platosDestacados"
+          ref={mainDishesRef}
+        >
           <div className="container">
             <h2 className="subtitle subtitle--white">PLATOS DESTACADOS</h2>
             <div className="dishes-images-container">
@@ -86,7 +102,7 @@ const Home = ({ mainDishes }) => {
             </div>
           </div>
         </section>
-        <section className="location">
+        <section className="location" ref={locationRef}>
           <h2 className="subtitle">UBICACIÓN</h2>
           <div className="map">
             <iframe

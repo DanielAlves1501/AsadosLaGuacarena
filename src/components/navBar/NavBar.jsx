@@ -46,7 +46,9 @@ const NavBar = ({
             {item.link === true ? (
               <Link to={item.path}>{item.name}</Link>
             ) : (
-              <a href="#">{item.name}</a>
+              <a href="#" onClick={item.onClick}>
+                {item.name}
+              </a>
             )}
           </motion.li>
         ))}
