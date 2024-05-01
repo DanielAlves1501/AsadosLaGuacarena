@@ -46,7 +46,7 @@ const NavBar = ({
             {item.link === true ? (
               <Link to={item.path}>{item.name}</Link>
             ) : (
-              <a href="#" onClick={item.onClick}>
+              <a href={item.path} target={item.target} onClick={item.onClick}>
                 {item.name}
               </a>
             )}

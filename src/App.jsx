@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import NavBar from "./components/navBar/NavBar";
 import "./index.css";
 import Parrillas from "./views/parrillas/Parrillas";
 import Pollos from "./views/pollos/Pollos";
@@ -14,7 +13,7 @@ import Modal from "./components/modal/Modal";
 import Hamburguesas from "./views/hamburguesas/Hamburguesas";
 import Pizzas from "./views/pizzas/Pizzas";
 import Home from "./views/home/Home";
-import Menu from "./views/menu/Menu";
+import Imagenes from "./views/imagenes/Imagenes";
 
 function App() {
   const [menuItems, setMenuItems] = useState([]);
@@ -93,7 +92,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home mainDishes={mainDishes} />} />
-          <Route path="/menu/*" element={<Menu />}>
+          <Route path="/imagenes/*" element={<Imagenes />}>
             <Route path="parrillas" element={<Parrillas />} />
             <Route path="pollos" element={<Pollos />} />
             <Route path="platosChef" element={<PlatosChef />} />

@@ -4,6 +4,7 @@ import NavBar from "../../components/navBar/NavBar";
 import { useMenuContext } from "../../context/menuContex";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import menu from "/menu.pdf";
 
 const Home = ({ mainDishes }) => {
   const { showMobileMenu, setShowMobileMenu, hideMobileMenuIcon } =
@@ -12,17 +13,19 @@ const Home = ({ mainDishes }) => {
   const locationRef = useRef();
 
   const homeNavbarItems = [
-    { name: "Menu", path: "/menu/parrillas", link: true },
+    { name: "Menu", path: menu, link: false, target: "_blank" },
     {
       name: "Platos Destacados",
-      path: "",
+      path: "#",
       link: false,
       onClick: () =>
         mainDishesRef.current.scrollIntoView({ behavior: "smooth" }),
     },
+    { name: "Imagenes", path: "/imagenes/parrillas", link: true },
+
     {
       name: "Ubicacion",
-      path: "",
+      path: "#",
       link: false,
       onClick: () => locationRef.current.scrollIntoView({ behavior: "smooth" }),
     },
@@ -53,9 +56,9 @@ const Home = ({ mainDishes }) => {
           >
             <h1 className="title title--home">LA GUACAREÑA</h1>
             <div className="hero-btn-container">
-              <Link to="/menu/parrillas" className="hero__btn">
+              <a href={menu} target="_blank" className="hero__btn">
                 Menu
-              </Link>
+              </a>
             </div>
           </motion.div>
         </div>
@@ -82,21 +85,19 @@ const Home = ({ mainDishes }) => {
             <div className="dishes-images-container">
               {mainDishes.map((dish, index) => {
                 return (
-                  <Link to={dish.path}>
-                    <motion.article
-                      initial={{ scale: 0 }}
-                      whileInView={{ scale: 1 }}
-                      transition={{ duration: 1, delay: index * 0.25 }}
-                      className="mainDish"
-                    >
-                      <h3 className="mainDish__name">{dish.name}</h3>
-                      <img
-                        className="mainDish__img"
-                        src={dish.imagePath}
-                        alt={dish.name}
-                      />
-                    </motion.article>
-                  </Link>
+                  <motion.article
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ duration: 1, delay: index * 0.25 }}
+                    className="mainDish"
+                  >
+                    <h3 className="mainDish__name">{dish.name}</h3>
+                    <img
+                      className="mainDish__img"
+                      src={dish.imagePath}
+                      alt={dish.name}
+                    />
+                  </motion.article>
                 );
               })}
             </div>
