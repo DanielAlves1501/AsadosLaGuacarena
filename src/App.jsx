@@ -47,22 +47,22 @@ function App() {
         {
           name: "Parrillas",
           imagePath: data[0].data[2].imagePath,
-          path: "/menu/parrillas",
+          path: "/imagenes/parrillas",
         },
         {
           name: "Pizzas",
           imagePath: data[2].data[2].imagePath,
-          path: "/menu/pizzas",
+          path: "/imagenes/pizzas",
         },
         {
           name: "Espetadas",
           imagePath: data[0].data[0].imagePath,
-          path: "/menu/parrillas",
+          path: "/imagenes/parrillas",
         },
         {
           name: "Pollo",
           imagePath: data[1].data[1].imagePath,
-          path: "/menu/pollos",
+          path: "/imagenes/pollos",
         },
       ];
 

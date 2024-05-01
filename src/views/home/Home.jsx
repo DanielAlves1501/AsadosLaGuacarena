@@ -85,19 +85,20 @@ const Home = ({ mainDishes }) => {
             <div className="dishes-images-container">
               {mainDishes.map((dish, index) => {
                 return (
-                  <motion.article
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
-                    transition={{ duration: 1, delay: index * 0.25 }}
-                    className="mainDish"
-                  >
-                    <h3 className="mainDish__name">{dish.name}</h3>
-                    <img
-                      className="mainDish__img"
-                      src={dish.imagePath}
-                      alt={dish.name}
-                    />
-                  </motion.article>
+                  <Link to={dish.path} className="mainDish">
+                    <motion.article
+                      initial={{ scale: 0 }}
+                      whileInView={{ scale: 1 }}
+                      transition={{ duration: 1, delay: index * 0.25 }}
+                    >
+                      <h3 className="mainDish__name">{dish.name}</h3>
+                      <img
+                        className="mainDish__img"
+                        src={dish.imagePath}
+                        alt={dish.name}
+                      />
+                    </motion.article>
+                  </Link>
                 );
               })}
             </div>
