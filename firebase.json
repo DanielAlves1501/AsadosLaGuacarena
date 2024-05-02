@@ -1,5 +1,12 @@
 {
   "hosting": {
+    "redirects": [
+      {
+        "source": "/*",
+        "destination": "https://laguacarena.com/:splat",
+        "type": 301
+      }
+    ],
     "rewrites": [
       {
         "source": "**",
