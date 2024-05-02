@@ -46,7 +46,7 @@ function App() {
       let mainDishes = [
         {
           name: "Parrillas",
-          imagePath: data[0].data[2].imagePath,
+          imagePath: data[0].data[3].imagePath,
           path: "/imagenes/parrillas",
         },
         {
@@ -56,7 +56,7 @@ function App() {
         },
         {
           name: "Espetadas",
-          imagePath: data[0].data[0].imagePath,
+          imagePath: data[0].data[1].imagePath,
           path: "/imagenes/parrillas",
         },
         {
