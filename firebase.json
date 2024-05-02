@@ -1,12 +1,5 @@
 {
   "hosting": {
-    "redirects": [
-      {
-        "source": "/*",
-        "destination": "https://laguacarena.com",
-        "type": 301
-      }
-    ],
     "rewrites": [
       {
         "source": "**",
