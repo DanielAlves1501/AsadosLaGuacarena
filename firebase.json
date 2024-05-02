@@ -3,7 +3,7 @@
     "redirects": [
       {
         "source": "/*",
-        "destination": "https://laguacarena.com/:splat",
+        "destination": "https://laguacarena.com",
         "type": 301
       }
     ],
