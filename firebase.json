@@ -2,8 +2,8 @@
   "hosting": {
     "redirects": [
       {
-        "source": "/",
-        "destination": "https://www.laguacarena.com",
+        "source": "/*",
+        "destination": "https://laguacarena.com/:splat",
         "type": 301
       }
     ],
