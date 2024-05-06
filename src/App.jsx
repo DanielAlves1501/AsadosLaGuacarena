@@ -14,6 +14,7 @@ import Hamburguesas from "./views/hamburguesas/Hamburguesas";
 import Pizzas from "./views/pizzas/Pizzas";
 import Home from "./views/home/Home";
 import Imagenes from "./views/imagenes/Imagenes";
+import NotFoundPage from "./views/notFoundPage/NotFoundPage";
 
 function App() {
   const [menuItems, setMenuItems] = useState([]);
@@ -92,6 +93,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home mainDishes={mainDishes} />} />
+          <Route path="*" element={<NotFoundPage />} />
           <Route path="/imagenes/*" element={<Imagenes />}>
             <Route path="parrillas" element={<Parrillas />} />
             <Route path="pollos" element={<Pollos />} />
