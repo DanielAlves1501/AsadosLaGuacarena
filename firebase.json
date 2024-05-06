@@ -11,12 +11,21 @@
       {
         "source": "**",
         "destination": "/index.html"
+      },
+      {
+        "source": "/sitemap.xml",
+        "destination": "/sitemap.xml"
       }
     ],
     "headers": [
       {
-        "key": "Content-Type",
-        "value": "application/xml"
+        "source": "/sitemap.xml",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/xml"
+          }
+        ]
       }
     ],
     "public": "dist",
