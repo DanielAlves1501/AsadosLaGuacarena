@@ -1,4 +1,4 @@
-Sitemap: https://laguacarena.com/
+Sitemap: https://laguacarena.com/sitemap.xml
 
 User-agent: *
 Allow: /
