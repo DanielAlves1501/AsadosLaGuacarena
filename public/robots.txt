@@ -1,0 +1,4 @@
+Sitemap: https://laguacarena.com/
+
+User-agent: *
+Allow: /
