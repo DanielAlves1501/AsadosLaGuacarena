@@ -10,52 +10,7 @@
 <url>
   <loc>https://laguacarena.com/</loc>
   <lastmod>2024-05-02T19:33:48+00:00</lastmod>
-  <priority>1.0</priority>
-
 </url>
 
-<url>
-      <loc>https://laguacarena.com/images</loc>
-      <lastmod>2024-05-05</lastmod>
-      <changefreq>weekly</changefreq>
-      <priority>0.8</priority>
-   </url>
-   <!-- Patrón para las URL con prefijo /images -->
-   <url>
-      <loc>https://laguacarena.com/images/</loc>
-      <lastmod>2024-05-05</lastmod>
-      <changefreq>weekly</changefreq>
-      <priority>0.7</priority>
-   </url>
-   <url>
-      <loc>https://laguacarena.com/images/parrillas</loc>
-      <lastmod>2024-05-05</lastmod>
-      <changefreq>weekly</changefreq>
-      <priority>0.7</priority>
-   </url>
-   <url>
-      <loc>https://laguacarena.com/images/pollos</loc>
-      <lastmod>2024-05-05</lastmod>
-      <changefreq>weekly</changefreq>
-      <priority>0.7</priority>
-   </url>
-      <url>
-      <loc>https://laguacarena.com/images/pizzas</loc>
-      <lastmod>2024-05-05</lastmod>
-      <changefreq>weekly</changefreq>
-      <priority>0.7</priority>
-   </url>
-      <url>
-      <loc>https://laguacarena.com/images/hamburguesas</loc>
-      <lastmod>2024-05-05</lastmod>
-      <changefreq>weekly</changefreq>
-      <priority>0.7</priority>
-   </url>
-   <url>
-      <loc>https://laguacarena.com/images/postres</loc>
-      <lastmod>2024-05-05</lastmod>
-      <changefreq>weekly</changefreq>
-      <priority>0.7</priority>
-   </url>
 
 </urlset>
