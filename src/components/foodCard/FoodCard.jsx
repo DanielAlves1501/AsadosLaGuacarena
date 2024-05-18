@@ -11,6 +11,7 @@ const FoodCard = ({ item }) => {
     setSelectedDish,
     setShowModal,
     showModal,
+    hideMobileMenuIcon,
     setHideMobileMenuIcon,
     setShowMobileMenu,
   } = useMenuContext();
@@ -26,8 +27,10 @@ const FoodCard = ({ item }) => {
         onClick={() => {
           setShowModal(true);
           setSelectedDish(item);
-          setHideMobileMenuIcon(true);
-          setShowMobileMenu(false);
+          if (window.innerWidth <= 470) {
+            setHideMobileMenuIcon(true);
+            setShowMobileMenu(false);
+          }
         }}
       />
     </div>

@@ -71,6 +71,7 @@
 
 .mainDishes {
   padding: 40px 0;
+  min-height: 500px;
   background: url("../../assets/images/wood-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;

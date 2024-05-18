@@ -87,8 +87,8 @@ const Home = ({ mainDishes }) => {
                 return (
                   <Link to={dish.path} className="mainDish">
                     <motion.article
-                      initial={{ scale: 0 }}
-                      whileInView={{ scale: 1 }}
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
                       transition={{ duration: 1, delay: index * 0.25 }}
                     >
                       <h3 className="mainDish__name">{dish.name}</h3>
