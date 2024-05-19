@@ -33,6 +33,7 @@ function App() {
     const getHamburguesas = getMenuItem("hamburguesas");
     const getEnsaladas = getMenuItem("ensaladas");
     const getPostres = getMenuItem("postres");
+    const getCombos = getMenuItem("combos");
 
     Promise.all([
       getParrillas,
@@ -41,8 +42,10 @@ function App() {
       getEnsaladas,
       getHamburguesas,
       getPostres,
+      getCombos,
     ]).then((data) => {
       setMenuItems(data);
+      console.log(data);
 
       let mainDishes = [
         {
