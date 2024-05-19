@@ -7,7 +7,7 @@ const Combos = () => {
 
   return (
     <section>
-      <h1 className="title">Parrillas</h1>
+      <h1 className="title">Combos</h1>
       {menuItems.length > 1 && <Gallery items={menuItems[6].data} />}
     </section>
   );
